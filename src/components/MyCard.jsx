@@ -13,8 +13,8 @@ const MyCard = ({data}) => {
     const [isOpen,setOpen]=useState(false)
   return (
     <div>
-        <Grid item md={12}>
-            <Card sx={{border:"2px solid red"}}>
+        {/* <Grid item md={3}> */}
+            <Card style={{border:"2px solid red",marginBottom:30,maxWidth:345,marginLeft:70}}>
                 <CardContent>
                    
                     <Typography variant="body2">
@@ -25,7 +25,7 @@ const MyCard = ({data}) => {
                     <Link to={`${data.id}`}><Button onClick={<Modal isOpen={isOpen} setOpen={setOpen}/>} size="small">Detail of {data.name}</Button></Link>
                 </CardActions>
             </Card>
-            </Grid>
+            {/* </Grid> */}
     </div>
   )
 }

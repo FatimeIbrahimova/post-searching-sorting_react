@@ -20,6 +20,12 @@ const Home = () => {
     const getData = async () => {
         return await axios.get("https://jsonplaceholder.typicode.com/users")
             .then(res => setData(res.data))
+        //  fetch("https://jsonplaceholder.typicode.com/users")
+        // .then(res=>res.json())
+        // .then(res=>{
+        //     const sorting=res.sort((a,b)=>a.name.localCompare(b.name))
+        //     setData(sorting)
+        // })
     }
     useEffect(() => {
         getData()
@@ -40,13 +46,13 @@ const Home = () => {
                 />
                 <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
             </Paper>
-            <Grid container spacing={1} style={{ marginTop: "30px" }}>
+            <Grid container spacing={2} style={{ marginTop: "30px" }}>
                 {data
                     .filter(item => {
                         return value.trim().toLowerCase() === "" ? item : item.name.toLowerCase().includes(value.toLowerCase())
                     })
                     ?.map((item, index) => {
-                        return <MyCard key={index} data={item} />
+                        return <Grid md={4}><MyCard key={index} data={item}/></Grid>
                     })}
             </Grid>
         </div>

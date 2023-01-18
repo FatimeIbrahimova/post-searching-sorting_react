@@ -15,9 +15,9 @@ const Modal = ({ isOpen, setOpen }) => {
         <div id="Modal" style={{ with: 300, border: "1px solid black" }} className={isOpen ? "active" : ""}>
             <div className="modal-box">
                 <div className="close" onClick={() => setOpen(false)} style={{ cursor: "pointer", color: "red" }}>x</div>
-                <div className="content">
+                <div className="content" style={{border:"1px solid blue"}}>
                     {data.map((item, index) => {
-                        return (item.id == data.id ? <p>{data?.title}</p> : "")
+                        return (item.id == data.id ? <p>{data?.title}</p> :<p>{item?.title}</p>)
                     })}
                 </div>
             </div>
