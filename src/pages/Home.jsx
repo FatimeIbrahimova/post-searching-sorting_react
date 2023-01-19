@@ -41,7 +41,7 @@ const Home = () => {
                 </IconButton>
                 <InputBase onChange={(e) => handleChange(e)}
                     sx={{ ml: 1, flex: 1 }}
-                    placeholder="Search Google Maps"
+                    placeholder="Search Cards"
                     inputProps={{ 'aria-label': 'search google maps' }}
                 />
                 <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
